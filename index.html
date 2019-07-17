@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RSS Feed</title>
+	<script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+	<script src='rss.js' defer></script>
+	<link rel='stylesheet' href='style.css'>
+</head>
+<body>
+	<h1>RSS Reader Summarize, Tag, and Analyze RSS Feeds</h1>
+	<p>Automatically create summaries, extract tags, and analyze the sentiment of RSS feeds</p>
+	
+<div class="row">
+      <div class="col-md-6">
+        <form class="card">
+        <!-- Inputs -->
+          <div class="form-group">
+            <label class="block">Select an example RSS feed:</label>
+            <select id="rssSelector" class="form-control" onchange="updateRssUrl()">
+              <option disabled>Select an example RSS feed</option>
+
+              <!-- Replace these with links to your favorite RSS feeds -->
+              <option value="https://hacks.mozilla.org">Hacks Mozilla</option>
+              <option value="http://www.hongkiat.com/blog/">Hongkiat Blog</option>
+              <option value="http://www.alistapart.com/feed/rss.xml">A List Apart</option>
+              <option value="https://webkit.org/blog/">webkit Blog</option>
+            </select>
+          </div>
+
+ <label class="block">Or input your own:</label>
+          <div class="form-group">
+            <input class="form-control" id="rssUrl">
+          </div>
+
+          <div class="form-group">
+            <button class="btn btn-primary whitespace-none" onclick="processFeed()">Analyze RSS</button>
+            <span class="aspinner hidden" id="fetch-spinner"></span>
+            <span id="status-label"></span>
+          </div>
+        </form>
+      </div>
+    </div>
+
+	<output>Loading...</output>
+	<template>
+		<h2></h2>
+		<h3></h3>
+		<a href='#'></a>
+		<p></p>
+	</template>
+</body>
+</html>
